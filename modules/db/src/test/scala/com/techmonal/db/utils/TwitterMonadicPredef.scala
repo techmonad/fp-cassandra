@@ -26,8 +26,8 @@ object TwitterMonadicPredef {
   implicit val monadErrorTwitterFuture: MonadError[Future, Throwable] = new MonadError[Future, Throwable] {
     override def raiseError[A](e: Throwable): Future[A] = Future.exception(e)
 
-    override def handleErrorWith[A](fa: Future[A])(f: Throwable => Future[A]): Future[A] = fa.rescue {
-      case NonFatal(e) => f(e)
+    override def handleErrorWith[A](fa: Future[A])(f: Throwable => Future[A]): Future[A] = fa.rescue { case NonFatal(e) =>
+      f(e)
     }
 
     override def pure[A](x: A): Future[A] = Future.value(x)

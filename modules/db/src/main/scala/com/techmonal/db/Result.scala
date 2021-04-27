@@ -22,17 +22,17 @@ class RowBuilder(row: Row) {
       case etc                => etc
     }
 
-  def getString: String => Try[String] = withError { row.getString }
+  def getString: String => Try[String] = withError(row.getString)
 
-  def getInt: String => Try[Int] = withError { row.getInt }
+  def getInt: String => Try[Int] = withError(row.getInt)
 
-  def getBool: String => Try[Boolean] = withError { row.getBool }
+  def getBool: String => Try[Boolean] = withError(row.getBool)
 
-  def getDouble: String => Try[Double] = withError { row.getDouble }
+  def getDouble: String => Try[Double] = withError(row.getDouble)
 
-  def getDate: String => Try[Instant] = name => withError { row.getTimestamp } { name }.map { _.toInstant }
+  def getDate: String => Try[Instant] = name => withError(row.getTimestamp)(name).map(_.toInstant)
 
-  def getUUID: String => Try[UUID] = withError { row.getUUID }
+  def getUUID: String => Try[UUID] = withError(row.getUUID)
 
   def getJson[T](name: String)(implicit d: Decoder[T]): Try[T] =
     for {

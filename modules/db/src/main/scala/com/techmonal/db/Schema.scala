@@ -32,8 +32,8 @@ final case class Schema[T](columnDetails: Seq[ColumnDetails[T]])(implicit tableD
   private def addRecords(recordMap: RecordMap)(insert: Insert): Insert = {
     val list = recordMap.toList.map { case (k, v) => (k, v.raw) }
 
-    list.foldLeft[Insert](insert) {
-      case (acc, (name, v)) => acc.value(name, v)
+    list.foldLeft[Insert](insert) { case (acc, (name, v)) =>
+      acc.value(name, v)
     }
   }
 
@@ -51,8 +51,8 @@ final case class Schema[T](columnDetails: Seq[ColumnDetails[T]])(implicit tableD
     val list: List[(String, Any)] = cassandraMap.toList.collect { case (k, v) if k != tableDetails.pkName => (k, v.raw) }
     val head :: tail              = list
 
-    tail.foldLeft(update.`with`(set(head._1, head._2))) {
-      case (acc, (name, value)) => acc.and(set(name, value))
+    tail.foldLeft(update.`with`(set(head._1, head._2))) { case (acc, (name, value)) =>
+      acc.and(set(name, value))
     }
   }
 
