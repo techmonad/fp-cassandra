@@ -17,10 +17,13 @@ object TwitterExecutor {
 
   private def convertToFuture[T](lf: ListenableFuture[T]): Future[T] = {
     val p = Promise[T]
-    Futures.addCallback(lf, new FutureCallback[T] {
-      def onSuccess(result: T): Unit    = p.setValue(result)
-      def onFailure(t: Throwable): Unit = p.setException(t)
-    })
+    Futures.addCallback(
+      lf,
+      new FutureCallback[T] {
+        def onSuccess(result: T): Unit    = p.setValue(result)
+        def onFailure(t: Throwable): Unit = p.setException(t)
+      }
+    )
     p
   }
 
