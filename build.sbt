@@ -65,7 +65,7 @@ lazy val webLibraryDependencies = Seq()
 lazy val dbLibraryDependencies = commonLibraryDependencies ++ Seq(
   "com.datastax.dse"  % "dse-java-driver-core" % "1.5.1",
   "org.typelevel"     %% "cats-core"           % "2.6.0",
-  "org.cassandraunit" % "cassandra-unit"       % "3.5.0.1"
+  "org.cassandraunit" % "cassandra-unit"       % "3.11.2.0"
 )
 
 lazy val circeDependencies = Seq(
