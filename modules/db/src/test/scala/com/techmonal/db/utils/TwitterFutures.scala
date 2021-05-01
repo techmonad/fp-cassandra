@@ -1,9 +1,10 @@
 package com.techmonal.db.utils
 
-import java.util.concurrent.TimeUnit
-
 import com.twitter.util.Awaitable
 import org.scalatest.concurrent.Futures
+
+import java.util.concurrent.TimeUnit
+import scala.language.implicitConversions
 
 trait TwitterFutures extends Futures {
   def await[T](a: Awaitable[T], nrSeconds: Long = 5): T =
