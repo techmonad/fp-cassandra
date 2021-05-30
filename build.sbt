@@ -54,7 +54,7 @@ lazy val db = project
   .settings(libraryDependencies ++= dbLibraryDependencies)
 
 lazy val commonLibraryDependencies = Seq(
-  "com.twitter"       %% "util-core"                % "21.4.0",
+  "com.twitter"       %% "util-core"                % "21.5.0",
   "ch.qos.logback"    % "logback-classic"           % "1.2.3",
   "org.scalatest"     %% "scalatest"                % "3.0.8" % Test,
   "org.scalatestplus" %% "scalatestplus-scalacheck" % "3.1.0.0-RC2" % Test
