@@ -106,7 +106,7 @@ releaseProcess := Seq(
   pushChanges
 )
 
-lazy val kindProjectorSetting = "org.typelevel" %% "kind-projector" % "0.13.0" cross CrossVersion.full
+lazy val kindProjectorSetting = "org.typelevel" %% "kind-projector" % "0.13.1" cross CrossVersion.full
 
 addCommandAlias("fmt", ";scalafmtSbt;scalafmt;test:scalafmt")
 addCommandAlias("cpl", ";compile;test:compile")
