@@ -55,8 +55,8 @@ lazy val db = project
 
 lazy val commonLibraryDependencies = Seq(
   "com.twitter"       %% "util-core"                % "21.6.0",
-  "ch.qos.logback"    % "logback-classic"           % "1.2.6",
-  "org.scalatest"     %% "scalatest"                % "3.0.8" % Test,
+  "ch.qos.logback"     % "logback-classic"          % "1.2.6",
+  "org.scalatest"     %% "scalatest"                % "3.0.8"       % Test,
   "org.scalatestplus" %% "scalatestplus-scalacheck" % "3.1.0.0-RC2" % Test
 ) ++ circeDependencies
 
@@ -64,7 +64,7 @@ lazy val webLibraryDependencies = Seq()
 
 lazy val dbLibraryDependencies = commonLibraryDependencies ++ Seq(
   "com.datastax.dse"  % "dse-java-driver-core" % "1.5.1",
-  "org.typelevel"     %% "cats-core"           % "2.6.1",
+  "org.typelevel"    %% "cats-core"            % "2.7.0",
   "org.cassandraunit" % "cassandra-unit"       % "3.5.0.1"
 )
 
