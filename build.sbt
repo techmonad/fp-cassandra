@@ -11,7 +11,7 @@ lazy val root = (project in file("."))
     inThisBuild(
       List(
         organization := "com.techmonal",
-        scalaVersion := "2.13.5",
+        scalaVersion := "2.13.7",
         scalastyleFailOnError := true,
         scalastyleFailOnWarning := false,
         scalafmtOnCompile := true
@@ -54,7 +54,7 @@ lazy val db = project
   .settings(libraryDependencies ++= dbLibraryDependencies)
 
 lazy val commonLibraryDependencies = Seq(
-  "com.twitter"       %% "util-core"                % "21.6.0",
+  "com.twitter"       %% "util-core"                % "21.12.0",
   "ch.qos.logback"     % "logback-classic"          % "1.2.10",
   "org.scalatest"     %% "scalatest"                % "3.0.8"       % Test,
   "org.scalatestplus" %% "scalatestplus-scalacheck" % "3.1.0.0-RC2" % Test
@@ -64,7 +64,7 @@ lazy val webLibraryDependencies = Seq()
 
 lazy val dbLibraryDependencies = commonLibraryDependencies ++ Seq(
   "com.datastax.dse"  % "dse-java-driver-core" % "1.5.1",
-  "org.typelevel"    %% "cats-core"            % "2.6.1",
+  "org.typelevel"    %% "cats-core"            % "2.7.0",
   "org.cassandraunit" % "cassandra-unit"       % "3.5.0.1"
 )
 
