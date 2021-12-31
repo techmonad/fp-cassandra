@@ -55,7 +55,7 @@ lazy val db = project
 
 lazy val commonLibraryDependencies = Seq(
   "com.twitter"       %% "util-core"                % "21.8.0",
-  "ch.qos.logback"    % "logback-classic"           % "1.2.4",
+  "ch.qos.logback"    % "logback-classic"           % "1.2.6",
   "org.scalatest"     %% "scalatest"                % "3.0.8" % Test,
   "org.scalatestplus" %% "scalatestplus-scalacheck" % "3.1.0.0-RC2" % Test
 ) ++ circeDependencies
@@ -106,7 +106,7 @@ releaseProcess := Seq(
   pushChanges
 )
 
-lazy val kindProjectorSetting = "org.typelevel" %% "kind-projector" % "0.13.1" cross CrossVersion.full
+lazy val kindProjectorSetting = "org.typelevel" %% "kind-projector" % "0.13.2" cross CrossVersion.full
 
 addCommandAlias("fmt", ";scalafmtSbt;scalafmt;test:scalafmt")
 addCommandAlias("cpl", ";compile;test:compile")
