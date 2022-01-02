@@ -7,9 +7,8 @@ import scala.util.control.NonFatal
 
 object TwitterMonadicPredef {
 
-  /**
-   * A Monad instance for Twitter Future
-   */
+  /** A Monad instance for Twitter Future
+    */
   implicit val monadTwitterFuture: Monad[Future] = new Monad[Future] {
     override def pure[A](x: A): Future[A] = Future.value(x)
 
