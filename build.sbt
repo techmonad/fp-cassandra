@@ -1,7 +1,7 @@
 import sbtrelease.ReleaseStateTransformations._
 import sbtrelease.ReleasePlugin.autoImport._
 
-val circeVersion = "0.14.1"
+val circeVersion = "0.14.2"
 
 // -------------------------------------------------------------------------------------------------------------------
 // Root Project
@@ -54,8 +54,8 @@ lazy val db = project
   .settings(libraryDependencies ++= dbLibraryDependencies)
 
 lazy val commonLibraryDependencies = Seq(
-  "com.twitter"       %% "util-core"                % "22.1.0",
-  "ch.qos.logback"     % "logback-classic"          % "1.2.11",
+  "com.twitter"       %% "util-core"                % "22.4.0",
+  "ch.qos.logback"     % "logback-classic"          % "1.2.10",
   "org.scalatest"     %% "scalatest"                % "3.0.8"       % Test,
   "org.scalatestplus" %% "scalatestplus-scalacheck" % "3.1.0.0-RC2" % Test
 ) ++ circeDependencies
