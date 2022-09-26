@@ -11,7 +11,7 @@ lazy val root = (project in file("."))
     inThisBuild(
       List(
         organization            := "com.techmonal",
-        scalaVersion            := "2.13.8",
+        scalaVersion            := "2.13.9",
         scalastyleFailOnError   := true,
         scalastyleFailOnWarning := false,
         scalafmtOnCompile       := true
